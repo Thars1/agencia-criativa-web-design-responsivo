@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
-<body>
+<body class="body">
     
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="nav">
                 <i id="burguer" class="material-symbols-outlined" onclick="clickMenu()">
                     menu
                 </i>
           
-            <div class="nav-mobile" onclick="clickMenu()" >
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre nós</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#contato">Contato</a></li>
+            <div class="nav__div--mobile" onclick="clickMenu()" >
+                <ul class="nav__ul">
+                    <li class="nav__li"><a class="nav__li "  href="#home">Home</a></li>
+                    <li class="nav__li"><a class="nav__li" href="#sobre">Sobre nós</a></li>
+                    <li class="nav__li"><a class="nav__li" href="#servicos">Serviços</a></li>
+                    <li class="nav__li"><a class="nav__li" href="#depoimentos">Depoimentos</a></li>
+                    <li class="nav__li"><a class="nav__li" href="#contato">Contato</a></li>
                 </ul>
             </div>
 
@@ -29,94 +29,96 @@
         </nav>
     </header>
 
-    <main> 
-        <section class="banner">
-            <h1 id="home">Bem vindo a Agência Criativa Web</h1>
-            <h2> Transormamos sua criatividade em realidade digital.</h2>
+    <main class="main"> 
+        <section class="section banner">
+            <h1 id="home" class="home__h1">Bem vindo a Agência Criativa Web</h1>
+            <h2 class="banner__h2"> Transormamos sua criatividade em realidade digital.</h2>
             <p>Nossa agência conta com os mais taletosos colaboradores, tendo vários cases de sucesso, utilizamos uma interface de ia para o seu site, tendo um desing repsonsível para diverso aparelhos </p>
         </section><!-- Um banner de boas-vindas destacando a agência e seu diferencial. -->
-        <section>
-            <h1 id="sobre">Sobre nós</h1>
+        <section class="section">
+            <h1 id="sobre" class="sobre__h1">Sobre nós</h1>
             <p>A Agência Criativa Web (ACW) é uma empresa especialisada em desenvolvimento Web, com foco em inovação mas sempre respeitando os valores, tradições e seriedades de sua marcar. Não importa, o nêgocio unimos ele a internet, fazendo um serviçõ premium </p>
         </section><!--Sobre Nós: Breve descrição da agência e seus valores.-->
         
-        <section>
+        <section class="section">
             <h1 id="servicos"  >Serviços</h1>
             <!--Nessa parte eu quero vários quadrados com imagens separadas-->
-            <div id="container">
-                <div class="item">
+            <div id="container" class="container">
+                <div class=" container__item container__item--ativo">
                    
-                    <h1>Soluções Digitais Escalávies</h1>
-                     <img 
+                    <h1 class="container__h1">Soluções Digitais Escalávies</h1>
+                     <img class="container__img"
                     src="imagens/solucoes-digitais-escalaveis-600.png"
 
                     srcset="imagens/solucoes-digitais-escalaveis-600.png 600w, 
                     imagens/solucoes-digitais-escalaveis-1200.png 1200w 
                     imgens/solucoes-digitais-escalaveis-1800.png 1800w"
                     > <!--Imagem representativa do serviço-->
-                    <p>Quer pegar mais clientes e aumentar suas vendas? Nossa agência oferece soluções digitais escaláveis para impulsionar seu negócio.</p>
+                    <p class="  container__p">Quer pegar mais clientes e aumentar suas vendas? Nossa agência oferece soluções digitais escaláveis para impulsionar seu negócio.</p>
                 </div>
-                <div class="item">
-                    <h1>Desenvolvimento de Desing Únicos</h1>
-                    <img 
+                <div class=" container__item container__item--ativo">
+                    <h1 class="container__h1">Desenvolvimento de Desing Únicos</h1>
+                    <img class="container__img"
                     src="imagens/desenvolvimento-de-designs-unicos-600.png"
                     srcset="imagens/desenvolvimento-de-designs-unicos-600.png 600w, 
                     imagens/desenvolvimento-de-desings-unicos-1200.png 1200w, 
                     imagens/desenvolvimento-de-desings-unicos-1800.png 1800w"
                     > <!--Imagem representativa do serviço-->
-                    <p>Criamos designs únicos e personalizados que refletem a identidade da sua marca e atraem seu público-alvo.</p>
+                    <p  class="container__p">Criamos designs únicos e personalizados que refletem a identidade da sua marca e atraem seu público-alvo.</p>
                 </div>
-                <div class="item">
-                    <h1>Marketing Digital</h1>
-                    <img
+                <div class=" container__item container__item--ativo">
+                    <h1 class="container__h1">Marketing Digital</h1>
+                    <img class="container__img"
                     src="imagens/marqueting-digital-600"
                     srcset="imagens/marqueting-digital-600.png 600w,
                     imagens/marqueting-digital-1200.png 1200w,
                     imagens/marqueting-digital-1800.png 1800w"
                     >
-                    <p>Desenvolvemos estratégias de marketing digital eficazes para aumentar sua visibilidade online e impulsionar suas vendas.</p>
+                    <p  class=" container__p">Desenvolvemos estratégias de marketing digital eficazes para aumentar sua visibilidade online e impulsionar suas vendas.</p>
                 </div>
-                <div class="item">
-                    <h1>Criação do Sites do Zero</h1>
-                    <img 
+                <div class=" container__item container__item--ativo">
+                    <h1 class="container__h1">Criação do Sites do Zero</h1>
+                    <img class="container__img"
                     src="imagens/criacoes-de-sites-do-zero-600.png"
                     srcset="imagens/criacoes-de-sites-do-zero-600.png 600w,
                     imagens/criacoes-de-sites-do-zero-1200.png 1200w,
                     imagens/criacoes-de-sites-do-zero-1800.png 1800w"
                     >
-                    <p>Construímos sites modernos e funcionais do zero, adaptados às necessidades específicas do seu negócio.</p>
+                    <p  class=" container__p">Construímos sites modernos e funcionais do zero, adaptados às necessidades específicas do seu negócio.</p>
                 </div>
-                <div class="item">
-                    <h1>Atualização de Desing</h1>
+                <div class=" container__item container__item--ativo">
+                    <h1 class=" container__h1">Atualização de Desing</h1>
                     <img
+                    class="container__img"
                     src="imagens/atualizacao-de-design-600.png"
                     srcset="imagens/atualizacao-de-desing-600.png 600w,
                     imagens/atualizacao-de-desing-1200.png 1200w,
                     imagens/atualizacao-de-desing-1800.png 1800w"
                     >
-                    <p>Atualizamos o design dos seus sites existentes para manter-se atualizados com as últimas tendências e melhores práticas.</p>
+                    <p  class=" container__p">Atualizamos o design dos seus sites existentes para manter-se atualizados com as últimas tendências e melhores práticas.</p>
                 </div>
-                <div class="item">
-                    <h1>Consultoria em SEO</h1>
+                <div class=" container__item container__item--ativo">
+                    <h1 class="container__h1">Consultoria em SEO</h1>
                     <img
+                    class="container__img"
                     src="imagens/consultoria-seo-600.png"
                     srcset="imagens/consultoria-seo-600.png 600w,
                     imagens/consultoria-seo-1200.png 1200w,
                     imagens/consultoria-seo-1800.png 1800w"
                     >
-                    <p>Nossaa  consultoria otimiza mecanismos de busca (SEO) para melhorar o posicionamento dos seus sites.</p>
+                    <p  class=" container__p">Nossaa  consultoria otimiza mecanismos de busca (SEO) para melhorar o posicionamento dos seus sites.</p>
                 </div>
             </div>
 
         </section><!--Serviços: Lista de serviços oferecidos
         // (ex: design gráfico, desenvolvimento web, branding, etc.).-->
-        <section class="depoimentos">
-            <h1 id="depoimentos">Depoimentos</h1>
+        <section class="section depoimentos">
+            <h1 id="depoimentos"  class="depoimentos__h1">Depoimentos</h1>
         <!-- Nessa parte os depoismento vão ser rotacionados  --> 
-            <div class="carousel">
-                <div class="itemDepoimentos">
-                    <div class="cabeca-depoimentos">
-                        <img class="foto-depoimentos"
+            <div class="carousel carousel--desativado carousel--esquerda carousel--direita">
+                <div class="depoimentos__items">
+                    <div class="depoimentos--cabeca ">
+                        <img class="depoimentos__img"
 
                         src="imagens-depoimentos/pexels-iryna-olar-600.jpg"
                         srcset="imagens-depoimentos/pexels-iryna-olar-600.jpg 600w,
@@ -128,9 +130,9 @@
                     <p>Estava desesperado a procurar de atualizar o meu negócio físico, para algo mais moder no mercado digital,
                         com a ajuda da Agência Criativa Web, consegui transformar meu negócio e alcançar mais clientes.</p>
                 </div>
-                <div class="itemDepoimentos">
-                    <div class="cabeca-depoimentos">
-                        <img class="foto-depoimentos"
+                <div class="depoimentos__items">
+                    <div class="depoimentos--cabeca ">
+                        <img class="depoimentos__img"
                         src="imagens-depoimentos/pexels-simeart-600.jpg"
                         srcset="imagens-depoimentos/pexels-simeart-600.jpg 600w,
                         imagens-depoimentos/pexels-simeart-1200.jpg 1200w,
@@ -141,9 +143,9 @@
                     <p>O meu negócio estava com problemas financeiros, mas com a ajuda da Agência Criativa Web, consegui superar esses desafios e expandir meu negócio.
                        </p>
                 </div>
-                <div class="itemDepoimentos">
-                    <div class="cabeca-depoimentos">
-                        <img class="foto-depoimentos"
+                <div class="depoimentos__items">
+                    <div class="depoimentos--cabeca">
+                        <img class="depoimentos__img"
                         src="imagens-depoimentos/pexels-tolga-aksoy-600.jpg"
                         srcset="imagens-depoimentos/pexels-tolga-aksoy-600.jpg 600w,
                         imagens-depoimentos/pexels-tolga-aksoy-1200.jpg 1200w,
@@ -155,9 +157,9 @@
                         <p>Com a consultoria da ACW, conseguimos reposicionar o marketing digital, repgainando o brand e espandindo o negócio completamente</p>
                     
                 </div>
-                <div class="itemDepoimentos">
-                    <div class="cabeca-depoimentos">
-                        <img class="foto-depoimentos"
+                <div class="depoimentos__items">
+                    <div class="depoimentos--cabeca">
+                        <img class="depoimentos__img"
                         src="imagens-depoimentos/pexels-vinicius-cezario-600.jpg"
                         srcset="imagens-depoimentos/pexels-vinicius-cezario-600.jpg 600w,
                         imagens-depoimentos/pexels-vinicius-cezario-1200.jpg 1200w,
@@ -169,33 +171,33 @@
                 </div>
             </div>
         </section><!--Depoimentos: Comentários de clientes fictícios para reforçar a credibilidade da agência-->
-        <section class="contato">
+        <section class="section contato">
             <h1 id="contato">Contato</h1>
-            <ul>
-                <li>Endereço: Rua Exemplo, 123 - São Paulo/SP</li>
-                <li>Telefone: (00) 1234-5678</li>
-                <li>E-mail: contato@agenciacriativaweb.com</li>
-            </ul>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+            <ul class="contato__ul">
+                <li class="contato__li">Endereço: Rua Exemplo, 123 - São Paulo/SP</li>
+                <li class="contato__li">Telefone: (00) 1234-5678</li>
+                <li class="contato__li">E-mail: contato@agenciacriativaweb.com</li>
+            </ul> 
+            <form class="contato__form">
+                <label  for="nome">Nome:</label>
+                <input class="contato__form--estilo" type="text" id="nome" name="nome" required>
 
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input class="contato__form--estilo" type="email" id="email" name="email" required>
 
-                <label for="numero">Número:</label>
-                <input type="text" id="numero" name="numero" required>
+                <label class="contato__form--estilo" for="numero">Número:</label>
+                <input class="contato__form--estilo" type="text" id="numero" name="numero" required>
 
-                <button type="submit">Enviar</button>
+                <button class="contato__form--estilo contato__button--centro" type="submit">Enviar</button>
             </form>
         </section><!-- Contato: Informações para contato (endereço, telefone, e-mail e um formulário de contato)-->
     </main>
-    <footer>
+    <footer class="footer">
         <p>© 2026 Agência Criativa Web. Todos os direitos reservados.</p>
     </footer>
     <script>
         function clickMenu(){
-            let navMobile = document.querySelector(".nav-mobile");
+            let navMobile = document.querySelector(".nav__div--mobile");
             if (navMobile.style.display === "block") {
                 navMobile.style.display = "none";
             } else {

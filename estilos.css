@@ -9,7 +9,7 @@
 }
 
 /* Container dos Serviços */
-#container{
+.container{
     width: 90vw;
  display: grid;
  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -20,7 +20,7 @@
 
 
 }
-.item{
+.container__item{
     position: relative; /* OBRIGATÓRIO: Mantém a imagem presa dentro do quadrado */
     overflow: hidden; /* Esconde a parte da imagem que ultrapassa o quadrado */
     display: flex;
@@ -38,7 +38,7 @@
     
 }
 
-.item img{
+.container__img{
     position: absolute; /* Tira a imagem do fluxo e joga para trás */
     top: 0;
     left: 0;
@@ -52,31 +52,37 @@
     transition: 0.8s;
 }
 
-
-.item:hover{
-    background-color: #ff6200;
-    color: #E0E1DD;
-    transition: 0.8s;
-}
-.item p{
+.container__p{
     display: none;
     font-size: 2rem;
    text-align: justify;
 }
-.item:hover p{
+/*Daqui até a parte do container foi feito a refatoração para a metodologia bem*/
+
+/* Daqui temos que fazer a refatoração para o modelo bem com relação a reação do css, utilizando o hou */
+.container__item--ativo:hover{
+    background-color: #ff6200;
+    color: #E0E1DD;
+    transition: 0.8s;
+}
+.container__item--ativo:hover .container__p{
     display: block;
     transition: 0.8s;
 }
-.item:hover img{
+.container__item--ativo:hover .container__img, .container__h1{
     display: none;
     transition: 0.8s;
 }
-.item:hover h1{
-    
-    display: none;
-    transition: 0.8s;
 
+.container__item--ativo:hover .container__h1{
+    display: none;
+    transition: 0.8s;
 }
+
+.container__h1{
+    display: block;
+}
+
 /* Depoimentos */
 
 /* Depoimentos - carousel */
@@ -102,7 +108,7 @@
     display: none;
 }
 
-.carousel::scroll-button(right), .carousel::scroll-button(left){
+.carousel--direita::scroll-button(right), .carousel::scroll-button(left){
     margin-top: 0.3em;
     content: '>';
     border: none;
@@ -118,22 +124,22 @@
     position: fixed;
     z-index: 2;
 }
-.carousel::scroll-button(left){
+.carousel--esquerda::scroll-button(left){
     content: '<';
     position-area: left bottom; ;
 }
-.carousel::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{
+.carousel--desativado::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{
     background-color: #ccc;
     cursor: auto;
     opacity: 0.5;
     
 }
 
-.depoimentos h1{
+.depoimento__h1{
     padding: 0;
     margin: 0;
 }
-.itemDepoimentos{
+.depoimentos__items{
     scroll-snap-align: center;/* Alinha o item ao centro ao rolar */
     padding: 1em;
     text-align: justify;
@@ -143,7 +149,8 @@
 }
 
 /* Cabeça dos depoimentos */
-.cabeca-depoimentos{
+.depoimentos--cabeca {
+    /*Refatorando .cabeca-depoimentos para depoimentos--cabeca */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +160,7 @@
   border-bottom: 2px solid black;
 
 }
-img.foto-depoimentos{
+.depoimentos__img{
     width: 7rem;
     height: 8rem;
     border-radius: 30em;
@@ -161,22 +168,25 @@ img.foto-depoimentos{
 }
 
 
+/* MARCANDO PARA LEMBRAR DE COMEÇAR A REFATORAÇÃO AQUI*/
 
-header{
+
+.header{/*Blocn do header*/
     display: flex;
     width: 100%;
     justify-content: flex-end;
     grid-area: header;
+
 }
 
-section{
+.section{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     padding: 1rem;
 }
-nav{
+.nav{
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -192,13 +202,13 @@ i#burguer{
     position: relative;
     z-index: 11;
 }
-.banner h2{
+.banner__h2{
     font-size: 2.3rem;
     text-align: center;
     margin-bottom: 1rem;
 
 }
-#home{
+.home__h1{
     font-size: 4rem;
     text-align: center;
 
@@ -207,12 +217,12 @@ i#burguer{
     padding-bottom: 1.2rem;
 }
 /*Sobre */
-#sobre{
+.sobre__h1{
     text-align: center;
 }
 
 
-main{
+.main{
     grid-area:main;
     font-size: 1.8rem;
     display: flex;
@@ -223,7 +233,7 @@ main{
     padding:  1rem;
 }
 
-div.nav-mobile{
+.nav__div--mobile{
     background-color: #ff6200;
     display: none;
     height: 50%;
@@ -238,7 +248,7 @@ div.nav-mobile{
 }
 
 
-div.nav-mobile ul{
+.nav__ul{
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -247,7 +257,7 @@ div.nav-mobile ul{
     height: 100%;
     gap: 1.5rem;
 }
-div.nav-mobile ul li a{
+.nav__li{
     color: white;
     text-decoration: none;
    font-size: 2rem;
@@ -255,7 +265,7 @@ div.nav-mobile ul li a{
 
 
 /* Tentantdo utilizar o grid layout */
-body{
+.body{
     display: grid;
      min-height: 100dvh;
     grid-template-rows: auto 1fr  auto;
@@ -267,7 +277,7 @@ body{
 background-color: #1B2638;
 grid-template-columns: 1fr;    
 }
-footer{
+.footer{
     grid-area: footer;
     background-color: #0D1B2A;
     color: white;
@@ -277,7 +287,7 @@ footer{
 }
 
 
-header{
+.header{
     grid-area: header;
     display: flex;
     width: 100%;
@@ -294,19 +304,19 @@ header{
 
 
 }
-.contato ul li{
+.contato__li{
     font-size: 1.8rem;
     text-align: left;
    text-decoration: none;
     color: #0D1B2A;
      padding: 0.5rem;
 }
-.contato ul{
+.contato__ul{
     list-style: none;
 
 }
 
-.contato form{
+.contato__form{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -315,7 +325,8 @@ header{
   
     width: 100%;
 }
-.contato form input, .contato form textarea, .contato form button{
+.contato__form--estilo{
+    /* Estilo dos seguintes pontos: input, form, textarea ebutton*/
     font-size: 1.5rem;
     padding: 0.5rem;
     border-radius: 5px;
@@ -324,7 +335,7 @@ header{
 
 @media (min-width: 1024px){
 
-    body {
+    .body {
         display: grid;
         /* Define 3 colunas: as laterais pegam 1 parte flexível e o main pega no máximo 1200px */
         grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
@@ -340,18 +351,18 @@ header{
 
     }
   
-    header {
+    .header {
         grid-area: header;
     }
 
-    main {
+    .main {
         grid-area: main;
         width: 100%; /* Garante que o main use todo o espaço da coluna central */
         justify-self: center; /* Mantém o main perfeitamente centralizado */
         background-color: #1B2638;
         border-radius: 1rem;
     }
-    #container{
+    .container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     justify-content: center;
@@ -359,7 +370,7 @@ header{
     z-index: 1;
     margin: 0;
     }
-    footer {
+    .footer {
         grid-area: footer;
     }
     .carousel{
@@ -377,7 +388,7 @@ header{
     z-index: 1;
 
     }
-    .contato form{
+    .contato__form{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -387,13 +398,13 @@ header{
     min-width:70dvw;
     }
     
-    .contato form button:last-child{
+    .contato__button--centro:last-child{ /*Centraliza o botão*/
     margin-left: auto;
     margin-right: auto;
     width: 30dvw;
     }
 
-   #container{
+   .container{
         background-image: radial-gradient(#1B263B, #0D1B2A);
     padding: 1.5rem;
    }
