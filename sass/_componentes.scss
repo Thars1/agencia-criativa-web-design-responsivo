@@ -1,0 +1,331 @@
+@use 'layout';
+@use 'variaveis';
+@use 'sass:math';
+
+/* Container dos Serviços */
+.container{
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
+    @include espacamento-padrao-gap;
+    z-index: 1;
+    margin: 0;
+    &__item{
+        position: relative; /* OBRIGATÓRIO: Mantém a imagem presa dentro do quadrado */
+        overflow: hidden; /* Esconde a parte da imagem que ultrapassa o quadrado */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   /* Garante centralização horizontal perfeita do h1/p */
+        font-size: 1.4rem;
+        background-color: variaveis.$cor-terciaria;
+        text-align: center;
+        border-radius: 10px;
+        @include espacamento-conteiner;
+        z-index: 1;
+        transition: background-color 0.8s, color 0.8s; 
+        &--ativo:hover{
+            background-color: variaveis.$cor-apoio-2;
+            color: variaveis.$cor-terciaria;
+            transition: 0.8s;
+        }
+        &--ativo:hover .container__p{
+            display: block;
+            transition: 0.8s;
+        }
+        &--ativo:hover .container__img, .container__h1{
+            display: none;
+            transition: 0.8s;
+        }
+
+        &--ativo:hover .container__h1{
+            display: none;
+            transition: 0.8s;
+        }
+        
+    }
+
+    &__img{
+        position: absolute; /* Tira a imagem do fluxo e joga para trás */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+        z-index: -5; /* Garante que a imagem fique atrás do texto */
+        opacity: 0.50; /* Deixa a imagem mais clara para destacar o texto */
+        transition: opacity 0.8s;
+        padding: 0.2rem;
+        transition: 0.8s;
+    }
+
+    &__p{
+        display: none;
+        font-size: 2rem;
+    text-align: justify;
+    }
+    
+    &__h1{
+    display: block;
+}
+
+}
+/*Daqui até a parte do container foi feito a refatoração para a metodologia bem*/
+
+/* Daqui temos que fazer a refatoração para o modelo bem com relação a reação do css, utilizando o hou */
+
+
+
+/* Depoimentos */
+
+/* Depoimentos - carousel */
+
+.carousel{
+    width: 90vw;
+    display: grid;
+    margin: 0.5em auto;
+    @include espacamento-padrao-gap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    anchor-name: --carousel;
+    grid-auto-flow: column;  /* Força os itens a ficarem na mesma linha */
+    grid-auto-columns: 100%; /* Cada depoimento ocupa 100% da largura visível */
+    scroll-snap-type: x mandatory;  /* Faz o "imã" para parar no depoimento certo */
+    @include espacamento-padrao-gap;
+    z-index: 1;
+
+}
+
+
+.carousel::-webkit-scrollbar{/* Esconde a barra de rolagem no Chrome, Safari e Opera */
+    display: none;
+}
+
+.carousel--direita::scroll-button(right), .carousel::scroll-button(left){
+    margin-top: 0.3em;
+    content: '>';
+    border: none;
+    background-color: variaveis.$cor-apoio-3;
+    color: variaveis.$cor-terciaria;
+    font-size: 2rem;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+    position-anchor: --carousel;
+    position-area: right bottom; ;
+    position: fixed;
+    z-index: 2;
+}
+.carousel--esquerda::scroll-button(left){
+    content: '<';
+    position-area: left bottom; ;
+}
+.carousel--desativado::scroll-button(right):disabled, .carousel::scroll-button(left):disabled{
+    background-color: #ccc;
+    cursor: auto;
+    opacity: 0.5;
+    
+}
+.depoimentos{
+    &__h1{
+        padding: 0;
+        margin: 0;
+    }
+    &__items{
+    scroll-snap-align: center;/* Alinha o item ao centro ao rolar */
+    
+    text-align: justify;
+    background-color: variaveis.$cor-terciaria;
+    border-radius: calc(variaveis.$gap-padrao/2);
+    padding: variaveis.$gap-padrao;
+}
+
+    &--cabeca {
+        /*Refatorando .cabeca-depoimentos para depoimentos--cabeca */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include espacamento-padrao-gap;
+        padding: 0.75em;
+        margin-bottom: calc(variaveis.$gap-padrao/2);
+        border-bottom: 2px solid variaveis.$cor-generica;
+
+    }
+    &__img{
+    width: 7rem;
+    height: 8rem;
+    border-radius: 30em;
+    object-fit: cover;
+}
+
+}
+
+/* Cabeça dos depoimentos */
+.depoimentos
+
+
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background-color: variaveis.$cor-secundaria;
+    
+    &__div--mobile{
+    background-color: variaveis.$cor-apoio-2;
+    display: none;
+    height: 50%;
+    width: 65%;
+    position: absolute;
+    top: 2.75rem;
+    z-index: 10;
+    align-items: raw;
+    flex-direction: column;
+    padding: variaveis.$gap-padrao;
+    border-radius: 0 0 0 10px;
+}
+    &__ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  
+    justify-content: space-around;
+    height: 100%;
+    @include espacamento-media-gap;
+}
+
+    &__li{
+    color: variaveis.$cor-apoio;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+
+}
+
+
+
+
+
+
+
+
+i#burguer{
+    color: variaveis.$cor-terciaria;
+    font-size: 2.7rem;
+    cursor: pointer;
+    display:block;
+    position: relative;
+    z-index: 11;
+}
+.banner__h2{
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+.home__h1{
+    font-size: 4rem;
+    text-align: center;
+
+    border-bottom: 0.1rem solid variaveis.$cor-apoio-2;
+    margin-bottom: variaveis.$gap-padrao;
+    padding-bottom: 1.2rem;
+}
+/*Sobre */
+.sobre__h1{
+    text-align: center;
+}
+
+
+
+/* Contatos */
+.contato {
+    
+    background-color: variaveis.$cor-terciaria;
+    margin-top: 2em;
+      border: 1px solid ;
+    border-radius: 0.5em;
+    &__li{
+    font-size: 1.8rem;
+    text-align: left;
+    text-decoration: none;
+    color: variaveis.$cor-secundaria;
+    @include espacamento-secundario
+
+}
+    &__ul{
+    list-style: none;
+
+}
+    &__form{
+    display: flex;
+    flex-direction: column;
+    @include espacamento-padrao-gap;
+    width: 50%;
+    margin: 0 auto;
+  
+    width: 100%;
+    &--estilo{
+    /* Estilo dos seguintes pontos: input, form, textarea ebutton*/
+    font-size: 1.5rem;
+    @include espacamento-secundario;
+    border-radius: 5px;
+    border: none;
+}   
+}
+
+
+
+
+}
+
+
+
+
+@media (min-width: 1024px){
+    .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center;
+    gap: 1rem;
+    z-index: 1;
+    margin: 0;
+    }
+    .carousel{
+    width: 68vw;
+    display: grid;
+    margin: 0.5em auto;
+    @include espacamento-padrao-gap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    anchor-name: --carousel;
+    grid-auto-flow: column;  /* Força os itens a ficarem na mesma linha */
+    grid-auto-columns: 100%; /* Cada depoimento ocupa 100% da largura visível */
+    scroll-snap-type: x mandatory;  /* Faz o "imã" para parar no depoimento certo */
+    @include espacamento-padrao-gap;
+    z-index: 1;
+
+    }
+    .contato__form{
+    display: flex;
+    flex-direction: column;
+    @include espacamento-padrao-gap;
+    width: 50%;
+    margin: 0 auto;
+    
+    min-width:70dvw;
+    }
+    
+    .contato__button--centro:last-child{ /*Centraliza o botão*/
+    @include botao-basico;
+    }
+
+   .container{
+        background-image: radial-gradient(variaveis.$cor-primaria, variaveis.$cor-secundaria);
+        @include espacamento-media;
+   }
+
+}

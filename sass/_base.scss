@@ -1,0 +1,46 @@
+
+/* Reset CSS */
+/* */
+@use 'variaveis';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* Tentantdo utilizar o grid layout */
+.body{
+    display: grid;
+     min-height: 100dvh;
+    grid-template-rows: auto 1fr  auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+
+    background-color: variaveis.$cor-primaria;
+    grid-template-columns: 1fr;    
+    font-family: variaveis.$fonte;
+
+}
+
+@media (min-width: 1024px){
+
+    .body {
+        display: grid;
+        /* Define 3 colunas: as laterais pegam 1 parte flexível e o main pega no máximo 1200px */
+        grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+        
+        /* O ponto (.) cria um espaço vazio/respiro nas laterais do main */
+        grid-template-areas: 
+            "header header header"
+            ".      main   ."
+            "footer footer footer";
+            
+        min-height: 100vh;
+                background-color:variaveis.$cor-secundaria;
+
+    }
+}

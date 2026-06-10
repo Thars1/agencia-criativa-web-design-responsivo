@@ -1,0 +1,74 @@
+@use 'mixins';
+@use 'variaveis';
+@use 'base';
+
+
+.header{/*Blocn do header*/
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    grid-area: header;
+
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include espacamento-padrao-gap;
+    @include espacamento-padrao;
+}
+.main{
+    grid-area:main;
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include espacamento-padrao-gap;
+    text-align: justify;
+    @include espacamento-padrao;
+}
+
+
+/* Utilizando o grid layout com os mixins */
+
+.footer{
+    grid-area: footer;
+    background-color: variaveis.$cor-secundaria;
+    color: variaveis.$cor-apoio;
+    text-align: center;
+    @include espacamento-padrao;
+}
+
+
+.header{
+    grid-area: header;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+
+
+@media (min-width: 1024px){
+
+    
+  
+    .header {
+        grid-area: header;
+    }
+
+    .main {
+        grid-area: main;
+        width: 100%; /* Garante que o main use todo o espaço da coluna central */
+        justify-self: center; /* Mantém o main perfeitamente centralizado */
+        background-color: variaveis.$cor-primaria;
+        border-radius: 1rem;
+    }
+    
+    .footer {
+        grid-area: footer;
+    }
+    
+    
+}

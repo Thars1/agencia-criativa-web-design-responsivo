@@ -1,0 +1,31 @@
+@use 'variaveis';
+
+@mixin botao-basico{
+    margin-left: auto;
+    margin-right: auto;
+    width: 30dvw;
+}
+
+@mixin espacamento-padrao {
+    padding: variaveis.$gap-padrao;
+}
+
+@mixin espacamento-media {
+    padding: variaveis.$gap-media;
+}
+
+@mixin espacamento-secundario {
+    padding: variaveis.$gap-secundario;
+}
+
+@mixin espacamento-conteiner {
+    padding: variaveis.$gap-conteiner;
+}
+
+@mixin espacamento-padrao-gap{
+    gap: variaveis.$gap-padrao;
+}
+
+@mixin espacamento-media-gap{
+    gap: variaveis.$gap-media;
+}
